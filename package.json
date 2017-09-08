@@ -1,0 +1,19 @@
+{
+  "name": "telemetry",
+  "version": "1.0.0",
+  "description": "A reuseable little tool to keep track of benchmarks Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wadeanthony0100/telemetry-js.git"
+  },
+  "author": "Wade Mauger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wadeanthony0100/telemetry-js/issues"
+  },
+  "homepage": "https://github.com/wadeanthony0100/telemetry-js#readme"
+}

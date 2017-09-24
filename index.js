@@ -20,34 +20,12 @@ class Telemetry {
   // of the corresponding sample, and returns
   // the elapsed time.
   end(token) {
+    if (!token) return -1;
     const sample = this.samples.get(token);
     sample.setEndTime();
     return sample.getElapsed();
   }
 
-  // Prints the name and elapsed time associated with
-  // a token (if it exists)
-  print(success, token, algorithmName, sampleSize) {
-    const sample = this.samples.get(token);
-    if (!success) {
-      console.log(`${algorithmName} failed after ${sample.getElapsed()}ms`); 
-      return;
-    }
-    if (sample) {
-      console.log(`${algorithmName} sorted ${sampleSize} items in ${sample.getElapsed()}ms`);
-    }
-  }
-
-  // Writes the same information as the print function,
-  // but as a csv file
-  printCsv(success, token, algorithmName, sampleSize) {
-    const sample = this.samples.get(token);
-    if (success) {
-      console.log(`"${algorithmName}", ${sampleSize}, ${sample.getElapsed()}`);
-    } else {
-      console.log(`"${algorithmName}", ${sampleSize}, "FAILED"`);
-    }
-  }
 }
 
 class Sample {
